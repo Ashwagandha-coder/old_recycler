@@ -4,11 +4,14 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_number"
-        style="@style/MaterialAlertDialog.Material3.Body.Text"
-        android:textSize="@dimen/textSize">
+        android:id="@+id/tv_number_item"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:textSize="@dimen/textSize"
+        android:padding="@dimen/padding"
+        android:layout_gravity="center_vertical|start"
+        android:fontFamily="monospace">
 
     </TextView>
 
