@@ -1,5 +1,6 @@
 package com.example.recyclerviewtestapp;
 
+import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -9,10 +10,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class NumberAdapter extends RecyclerView.Adapter<NumberAdapter.NumberViewHolder> {
 
+    private int viewHolderCount;
+    private static int counter;
+
+    public NumberAdapter(int count) {
+        this.viewHolderCount = count;
+        counter = 0;
+    }
+
     @NonNull
     @Override
     public NumberViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+
+        Context context = parent.getContext();
+
         return null;
+
     }
 
     @Override
@@ -22,7 +35,7 @@ public class NumberAdapter extends RecyclerView.Adapter<NumberAdapter.NumberView
 
     @Override
     public int getItemCount() {
-        return 0;
+        return viewHolderCount;
     }
 
     class NumberViewHolder extends RecyclerView.ViewHolder {
