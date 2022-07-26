@@ -17,4 +17,15 @@
 
     </TextView>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_view_holder_id"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:fontFamily="monospace"
+        android:layout_gravity="center_vertical|end"
+        android:textColor="@color/black">
+
+    </TextView>
+
 </FrameLayout>
