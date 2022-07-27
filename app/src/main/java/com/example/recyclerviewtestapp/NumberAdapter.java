@@ -1,6 +1,7 @@
 package com.example.recyclerviewtestapp;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -10,12 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class NumberAdapter extends RecyclerView.Adapter<NumberAdapter.NumberViewHolder> {
 
-    private int viewHolderCount;
-    private static int counter;
+    private int numbersItem;
+    private static int viewHolderCount;
 
-    public NumberAdapter(int count) {
-        this.viewHolderCount = count;
-        counter = 0;
+    public NumberAdapter(int numbersItem) {
+        this.numbersItem = numbersItem;
+        viewHolderCount = 0;
     }
 
     @NonNull
@@ -23,19 +24,30 @@ public class NumberAdapter extends RecyclerView.Adapter<NumberAdapter.NumberView
     public NumberViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         Context context = parent.getContext();
+        int numberListItemId = R.layout.number_list_item;
+        LayoutInflater layoutInflater = LayoutInflater.from(context);
 
-        return null;
+        View view = layoutInflater.inflate(numberListItemId,parent,false);
+
+        NumberViewHolder numberViewHolder = new NumberViewHolder(view);
+
+        numberViewHolder.indexViewHolder.setText("ViewHolder index " + viewHolderCount);
+        viewHolderCount++;
+
+        return numberViewHolder;
+
 
     }
 
     @Override
     public void onBindViewHolder(@NonNull NumberViewHolder holder, int position) {
+        holder.bind(position);
 
     }
 
     @Override
     public int getItemCount() {
-        return viewHolderCount;
+        return numbersItem;
     }
 
     class NumberViewHolder extends RecyclerView.ViewHolder {
@@ -51,9 +63,9 @@ public class NumberAdapter extends RecyclerView.Adapter<NumberAdapter.NumberView
 
         }
 
-        public void bind(int lastIndex) {
+        public void bind(int listIndex) {
 
-            itemNumberView.setText(String.valueOf(lastIndex));
+            itemNumberView.setText(String.valueOf(listIndex));
 
         }
     }
