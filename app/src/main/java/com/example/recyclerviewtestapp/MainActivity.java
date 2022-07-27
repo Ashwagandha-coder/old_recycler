@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         numberList.setHasFixedSize(true);
 
-        numberAdapter = new NumberAdapter(100);
+        numberAdapter = new NumberAdapter(100,this);
 
         numberList.setAdapter(numberAdapter);
 
