@@ -9,6 +9,7 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView numberList;
+    private NumberAdapter numberAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,10 @@ public class MainActivity extends AppCompatActivity {
         numberList.setLayoutManager(layoutManager);
 
         numberList.setHasFixedSize(true);
+
+        numberAdapter = new NumberAdapter(100);
+
+        numberList.setAdapter(numberAdapter);
 
 
     }
